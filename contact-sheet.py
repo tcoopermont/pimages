@@ -11,10 +11,12 @@ image=image.convert('RGB')
 # build a list of 9 images which have different brightnesses
 #enhancer=ImageEnhance.Brightness(image)
 images=[]
-for i in range(1, 10):
+channels = [0,0,0,1,1,1,2,2,2]
+intensities = [0.1,0.5,0.9]*3
+for i in range(0, 9):
     source = image.split()
-    out = source[R].point(lambda i: i * 0.5)
-    source[R].paste(out)
+    out = source[channels[i]].point(lambda x: x * intensities[i])
+    source[channels[i]].paste(out)
     images.append(Image.merge(image.mode,source))
     #images.append(enhancer.enhance(i/10))
 
