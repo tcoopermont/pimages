@@ -1,12 +1,14 @@
 import PIL
-from PIL import Image
-from PIL import ImageEnhance
+from PIL import Image,ImageDraw
 
 R, G, B = 0, 1, 2
 
 # read image and convert to RGB
 image=Image.open("readonly/msi_recruitment.gif")
 image=image.convert('RGB')
+height,width = image.size 
+#draw = ImageDraw.Draw(image)
+#draw.text((10,400),"testxxx")
 
 # build a list of 9 images which have different brightnesses
 #enhancer=ImageEnhance.Brightness(image)
