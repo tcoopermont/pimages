@@ -12,7 +12,7 @@ fnt = ImageFont.truetype("readonly/fanwood-webfont.ttf",46)
 image=Image.open("readonly/msi_recruitment.gif")
 image=image.convert('RGB')
 
-# build a list of 9 images which have different brightnesses
+# build a list of 9 images which have different channel/intensitie
 #enhancer=ImageEnhance.Brightness(image)
 images=[]
 channels = [0,0,0,1,1,1,2,2,2]
@@ -24,7 +24,7 @@ for i in range(0, 9):
     images.append(Image.merge(image.mode,source))
     #images.append(enhancer.enhance(i/10))
 
-# create a contact sheet from different brightnesses
+# create a contact sheet from different channel/intensities
 first_image=images[0]
 #print("width: " + str(first_image.width))
 #print("height: " + str(first_image.height))
